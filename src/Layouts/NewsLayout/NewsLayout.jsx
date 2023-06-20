@@ -2,30 +2,20 @@ import React from 'react';
 import Header from '../../Pages/Shared/Header/Header';
 import Footer from '../../Pages/Shared/Footer/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
-import LeftNav from '../../Pages/Shared/LeftNav/LeftNav';
 import RightNav from '../../Pages/Shared/RightNav/RightNav';
-import './Main.css';
 import { Outlet } from 'react-router-dom';
-import NavigationBar from '../../Pages/Shared/NavigationBar/NavigationBar';
 
-const Main = () => {
+const NewsLayout = () => {
     return (
         <div>
             <Header></Header>
-            <NavigationBar></NavigationBar>
-            <Container className=''>
+            <Container>
                 <Row>
-                    <Col lg={3}>
-                        <div>
-                            <LeftNav></LeftNav>
-                        </div>
-                    </Col>
-
-                    <Col lg={6}>
+                    <Col lg={9}>
                         <Outlet></Outlet>
                     </Col>
 
-                    <Col lg={3}>
+                    <Col className='text-center' lg={3}>
                         <div>
                             <RightNav></RightNav>
                         </div>
@@ -34,8 +24,8 @@ const Main = () => {
 
             </Container >
             <Footer></Footer>
-        </div >
+        </div>
     );
 };
 
-export default Main;    
+export default NewsLayout;
